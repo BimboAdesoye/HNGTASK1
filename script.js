@@ -5,23 +5,25 @@ const currentTime = document.querySelector('[data-testid="currentUTCTime"]');
 
 function getCurrentDayOfTheWeek() {
   const daysOfWeek = [
+    "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
     "Saturday",
-    "Sunday",
   ];
   const currentDate = new Date();
-  const dayIndex = currentDate.getUTCDay();
-  return daysOfWeek[dayIndex];
+  const day = currentDate.getUTCDay();
+  return daysOfWeek[day];
 }
 
 function getCurrentUTCTime() {
   const currentDate = new Date();
-  return currentDate.toUTCString();
+  return currentDate.getTime();
 }
+
+getCurrentUTCTime();
 
 currentDayOfTheWeek.innerHTML = getCurrentDayOfTheWeek();
 currentTime.innerHTML = getCurrentUTCTime();
