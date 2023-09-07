@@ -1,13 +1,17 @@
-// Add your JavaScript code here
+const currentDayOfTheWeek = document.querySelector(
+  '[data-testid="currentDayOfTheWeek"]'
+);
+const currentTime = document.querySelector('[data-testid="currentUTCTime"]');
+
 function getCurrentDayOfTheWeek() {
   const daysOfWeek = [
-    "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
     "Saturday",
+    "Sunday",
   ];
   const currentDate = new Date();
   const dayIndex = currentDate.getUTCDay();
@@ -19,8 +23,5 @@ function getCurrentUTCTime() {
   return currentDate.toUTCString();
 }
 
-// Update the content with real-time data
-document.querySelector('[data-testid="currentDayOfTheWeek"]').innerHTML =
-  getCurrentDayOfTheWeek();
-document.querySelector('[data-testid="currentUTCTime"]').innerHTML =
-  getCurrentUTCTime();
+currentDayOfTheWeek.innerHTML = getCurrentDayOfTheWeek();
+currentTime.innerHTML = getCurrentUTCTime();
