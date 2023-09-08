@@ -20,10 +20,16 @@ function getCurrentDayOfTheWeek() {
 
 function getCurrentUTCTime() {
   const currentDate = new Date();
-  return currentDate.getTime();
+  const hours = currentDate.getUTCHours();
+  const minutes = currentDate.getUTCMinutes();
+  const seconds = currentDate.getUTCSeconds();
+  const time = `${hours.toString().padStart(2, "0")}:${minutes
+    .toString()
+    .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+  currentTime.innerHTML = time;
 }
 
-getCurrentUTCTime();
-
 currentDayOfTheWeek.innerHTML = getCurrentDayOfTheWeek();
-currentTime.innerHTML = getCurrentUTCTime();
+
+getCurrentUTCTime();
+setInterval(getCurrentUTCTime, 1000);

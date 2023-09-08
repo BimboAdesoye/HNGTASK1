@@ -6,7 +6,7 @@ body {
 }
 
 h1 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 img {
   max-width: 230px;
@@ -15,4 +15,8 @@ img {
 
 p {
   font-size: 1.2rem;
+}
+
+.time {
+  font-weight: bold;
 }
